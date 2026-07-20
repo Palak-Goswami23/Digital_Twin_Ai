@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f7fc;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+.container{
+width:900px;
+background:#fff;
+border-radius:15px;
+box-shadow:0 8px 25px rgba(0,0,0,.15);
+display:flex;
+overflow:hidden;
+}
+
+.left{
+width:60%;
+padding:40px;
+}
+
+.right{
+width:40%;
+background:#f8f9ff;
+padding:40px;
+}
+
+h2{
+color:#4b5cff;
+margin-bottom:10px;
+}
+
+p{
+color:#666;
+margin-bottom:20px;
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:8px;
+outline:none;
+}
+
+textarea{
+height:120px;
+resize:none;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:30px;
+background:linear-gradient(90deg,#4b5cff,#8e44ff);
+color:#fff;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+opacity:.9;
+}
+
+.info{
+margin:20px 0;
+}
+
+.info i{
+color:#4b5cff;
+margin-right:10px;
+}
+
+.social i{
+font-size:22px;
+margin-right:15px;
+color:#4b5cff;
+cursor:pointer;
+}
+
+.msg{
+color:green;
+margin-bottom:15px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="left">
+
+<h2><i class="fa-solid fa-envelope"></i> Get in Touch</h2>
+
+<p>Have a question, suggestion or feedback? We'd love to hear from you.</p>
+
+{% if message %}
+<div class="msg">{{ message }}</div>
+{% endif %}
+
+<form action="/contact" method="POST">
+
+<input type="text" name="name" placeholder="Full Name" required>
+
+<input type="email" name="email" placeholder="Email Address" required>
+
+<input type="text" name="subject" placeholder="Subject" required>
+
+<textarea name="message" placeholder="Write your message here..." required></textarea>
+
+<button type="submit">
+<i class="fa-solid fa-paper-plane"></i> Send Message
+</button>
+
+</form>
+
+</div>
+
+<div class="right">
+
+<h2>Contact Information</h2>
+
+<div class="info">
+<i class="fa-solid fa-envelope"></i>
+support@digitaltwinai.in
+</div>
+
+<div class="info">
+<i class="fa-solid fa-phone"></i>
++91 98765 43210
+</div>
+
+<div class="info">
+<i class="fa-solid fa-location-dot"></i>
+Lucknow, Uttar Pradesh, India
+</div>
+
+<div class="info">
+<i class="fa-solid fa-clock"></i>
+Monday - Friday (9:00 AM - 6:00 PM)
+</div>
+
+<div class="social">
+<i class="fab fa-facebook"></i>
+<i class="fab fa-linkedin"></i>
+<i class="fab fa-github"></i>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
